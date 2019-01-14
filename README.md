@@ -4,9 +4,9 @@
 - node.js
 
 ## module
-> src
->> components
->> action
->> store
->> reducer
-> inedex.js
+> src  
+>> -components  
+>> -action  
+>> -store  
+>> -reducer  
+> inedex.js  
