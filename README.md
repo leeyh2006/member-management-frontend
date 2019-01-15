@@ -5,8 +5,8 @@
 
 ## module
 > src  
->> -components  
->> -action  
->> -store  
->> -reducer  
-> inedex.js  
+- -components  
+ - -action  
+ - -store  
+ - -reducer  
+- -inedex.js  
