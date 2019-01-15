@@ -4,12 +4,6 @@
 - node.js
 
 ## module
->
--
- - -action  
-  
-- -inedex.js  
-
 
 ```
 src  
@@ -18,6 +12,6 @@ src
 └─── action  
 └─── store  
 └─── reducer  
-| - index.js
+| index.js
 
 ```
