@@ -4,7 +4,7 @@ class Member extends Component{
     render() {
        return(
            <div>
-                This is Member Page
+               this is member Page;
            </div>
        )
     }
