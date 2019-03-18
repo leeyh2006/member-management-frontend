@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/member-management-frontend.iml" filepath="$PROJECT_DIR$/member-management-frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/patent-front.iml" filepath="$PROJECT_DIR$/patent-front.iml" />
     </modules>
   </component>
 </project>
