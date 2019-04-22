@@ -2,9 +2,12 @@ import React from 'react';
 import App from './components/App';
 import SignUpForm from './components/biz/sign/SignUpForm';
 import {Provider} from 'react-redux';
-import store from './store';
-import {Router,Route,browserHistory} from 'react-router';
+// import store from './store';
+import configure from 'store/configure';
 
+import {browserHistory, Route, Router} from 'react-router';
+
+const store =configure();
 
 const Root = () => {
     return (

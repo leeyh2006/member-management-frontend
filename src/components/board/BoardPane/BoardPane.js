@@ -1,9 +1,11 @@
 import React from 'react';
+import classNames from 'classnames/bind';
+import styles from './BoardPane.scss';
+const cx = classNames.bind(styles);
 
-
-const Board = ({index,title,content}) =>{
+const BoardPane = ({index,title,content}) =>{
     return(
-        <tbody>
+        <tbody className={cx('test')}>
         <tr>
             <th scope="row">{index+1}</th>
             <td>{title}</td>
@@ -15,11 +17,11 @@ const Board = ({index,title,content}) =>{
 }
 
 
-Board.defaultProps={
+BoardPane.defaultProps={
     title : '첫번째',
     content: '첫번째 내용'
 }
 //TODO - PropTypes 정의
 
 
-export default Board;
+export default BoardPane;

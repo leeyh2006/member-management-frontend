@@ -1,19 +1,22 @@
 import React, {Component} from 'react';
-import Board from "../components/board/Board";
-import BoardInput from "../components/board/BoardInput";
+import BoardPane from "../components/board/BoardPane/BoardPane";
+import BoardInput from "../components/board/BoardInput/BoardInput";
 
 import * as boardActions from '../store/modules/board';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import axios from 'axios';
 
 
 class BoardListContainer extends Component{
 
-    loadData() {
+    loadData= async () =>{
         const {BoardActions}=this.props;
-        BoardActions.getPost();
-    }
+        try{
+            await BoardActions.getData();
+        }catch (e) {
+            console.log(e);
+        }
+    };
     componentDidMount() {
         this.loadData();
     }
@@ -21,12 +24,6 @@ class BoardListContainer extends Component{
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log('this.props', this.props.board.size);
         console.log('prevProps ', prevProps);
-
-        // 최초 load 될때 설정 logic 추가`
-        //
-        // if(this.props !==prevProps){
-        //     return this.loadData();
-        // }
     }
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         return true;
@@ -35,11 +32,10 @@ class BoardListContainer extends Component{
 
     render() {
         const {board} = this.props;
-        console.log(board.toJS());
 
         const boardList = board.map(
             (list,i) =>(
-                <Board
+                <BoardPane
                     index={i}
                     key={i}
                     title={list.get('title')}

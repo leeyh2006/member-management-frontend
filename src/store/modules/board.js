@@ -1,6 +1,7 @@
 import {createAction, handleActions} from 'redux-actions';
-import {Map,List} from 'immutable';
-import axios from "axios";
+import {List, Map} from 'immutable';
+import {pender} from "redux-pender";
+import * as api from '../../lib/api';
 
 
 /**
@@ -13,34 +14,15 @@ const LIST = 'board/LIST';
 const GET_DATA ='board/GET_DATA';
 
 /**
- *  Action
+ *  Action creator
  */
 export const update = createAction(UPDATE);
 export const insert = createAction(INSERT);
 export const remove = createAction(REMOVE);
 export const list = createAction(LIST);
+export const getData = createAction(GET_DATA, api.getBoardData);
 
 
-/**
- * thunk
- */
-const getData = createAction(GET_DATA);
-
-function selectBoardList(postId) {
-    return axios.get(`https://jsonplaceholder.typicode.com/posts/1`);
-}
-export const getPost =(postId) =>dispatch=>{
-    dispatch(getData());
-
-    return selectBoardList(postId)
-        .then((response)=>{
-            dispatch(list(response));
-            return response;
-        })
-        .catch((error)=>{
-            console.log(error);
-        })
-}
 
 const initialState =List([
     Map({
@@ -54,6 +36,15 @@ const initialState =List([
 ])
 
 export default handleActions({
+    ...pender({
+       type: GET_DATA,
+        onSuccess:(state,action)=>{
+           const {title,content} = action.payload.data;
+           console.log(title,content);
+           return state.set('title',title)
+               .set('content',content);
+        }
+    }),
     [INSERT]:(state,action)=>{ //TODO 게시판 입력폼 만들어서 적용
         console.log('write called');
         console.log(state,action);

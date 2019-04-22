@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import * as boardActions from '../../store/modules/board';
+import * as boardActions from '../../../store/modules/board';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 
