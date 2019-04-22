@@ -1,5 +1,5 @@
 import React from 'react'
-import SignUp from "../biz/sign/SignUp";
+import SignUp from "../../biz/sign/SignUp";
 
 
 const MastHead = () =>{

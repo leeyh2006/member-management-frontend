@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
-import Nav from './header/Nav';
+import Nav from './common/header/Nav';
 
 import 'jquery'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import '../vendor/simple-line-icons/css/simple-line-icons.css';
-import '../vendor/fontawesome-free/css/all.min.css';
-import '../vendor/css/landing-page.min.css';
+import '../styles/vendor/simple-line-icons/css/simple-line-icons.css';
+import '../styles/vendor/fontawesome-free/css/all.min.css';
+import '../styles/vendor/css/landing-page.min.css';
 
-import MastHead from "./header/MastHead";
-import Grid from "./body/Grid";
-import ImageShowCase from "./body/ImageShowCase";
-import People from './footer/People'
+import MastHead from "./common/header/MastHead";
+import Grid from "./common/body/Grid";
+import ImageShowCase from "./common/body/ImageShowCase";
+import People from './common/footer/People'
 
 
 class App extends Component {

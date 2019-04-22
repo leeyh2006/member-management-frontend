@@ -1,7 +1,7 @@
 import React from 'react';
-import third from '../../vendor/img/bg-showcase-3.jpg';
-import Chart from "../chart/Chart";
-import BoardListContainer from "../../container/BoardContainer";
+import third from '../../../styles/vendor/img/bg-showcase-3.jpg';
+import Chart from "../../chart/Chart";
+import BoardListContainer from "../../../container/BoardContainer";
 
 const ImageShowCase = () =>{
     return(

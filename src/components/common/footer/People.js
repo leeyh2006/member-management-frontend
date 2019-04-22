@@ -1,7 +1,7 @@
 import React from 'react';
-import imgFirst from '../../vendor/img/testimonials-1.jpg';
-import imgSecond from '../../vendor/img/testimonials-2.jpg';
-import imgThrid from '../../vendor/img/testimonials-3.jpg';
+import imgFirst from '../../../styles/vendor/img/testimonials-1.jpg';
+import imgSecond from '../../../styles/vendor/img/testimonials-2.jpg';
+import imgThrid from '../../../styles/vendor/img/testimonials-3.jpg';
 
 const People = () =>{
 

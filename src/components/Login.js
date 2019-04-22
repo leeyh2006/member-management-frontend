@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import '../vendor/css/login/login.css'
+import '../styles/vendor/css/login/login.css'
 
 const customStyles = {
     content : {

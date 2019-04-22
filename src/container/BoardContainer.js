@@ -5,20 +5,40 @@ import BoardInput from "../components/board/BoardInput";
 import * as boardActions from '../store/modules/board';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
+import axios from 'axios';
 
 
 class BoardListContainer extends Component{
+
+    loadData() {
+        const {BoardActions}=this.props;
+        BoardActions.getPost();
+    }
     componentDidMount() {
-        console.log('리렌더링 될때');
+        this.loadData();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('this.props', this.props.board.size);
+        console.log('prevProps ', prevProps);
+
+        // 최초 load 될때 설정 logic 추가`
+        //
+        // if(this.props !==prevProps){
+        //     return this.loadData();
+        // }
+    }
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        return true;
 
     }
+
     render() {
         const {board} = this.props;
         console.log(board.toJS());
 
         const boardList = board.map(
             (list,i) =>(
-
                 <Board
                     index={i}
                     key={i}
