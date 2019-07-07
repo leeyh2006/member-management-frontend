@@ -1,3 +1,8 @@
+## Getting Started
+npm install
+npm start
+
+
 ## Stack 
 - React
 - Redux
